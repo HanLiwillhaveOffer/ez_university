@@ -16,4 +16,12 @@ class Migration(migrations.Migration):
             name='semester',
             field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='sections', to='courseinfo.Semester'),
         ),
+        migrations.AlterUniqueTogether(
+            name='student',
+            unique_together={('last_name', 'first_name', 'nickname')},
+        ),
+        migrations.AlterUniqueTogether(
+            name='section',
+            unique_together={('semester', 'course', 'section_name')},
+        ),
     ]

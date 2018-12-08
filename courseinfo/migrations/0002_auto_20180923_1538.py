@@ -37,18 +37,18 @@ class Migration(migrations.Migration):
         ),
         migrations.RenameField(
             model_name='semester',
-            old_name='Semester_id',
+            old_name='semester_id',
             new_name='semester_id',
         ),
         migrations.RenameField(
             model_name='semester',
-            old_name='Semester_name',
+            old_name='semester_name',
             new_name='semester_name',
         ),
         migrations.AlterField(
             model_name='section',
             name='semester',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='sections', to='courseinfo.Semester', to_field='Semester_id'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='sections', to='courseinfo.Semester', to_field='semester_id'),
         ),
         migrations.AlterUniqueTogether(
             name='course',
@@ -62,8 +62,5 @@ class Migration(migrations.Migration):
             name='registration',
             unique_together={('section', 'student')},
         ),
-        migrations.AlterUniqueTogether(
-            name='student',
-            unique_together={('last_name', 'first_name', 'nickname')},
-        ),
+
     ]

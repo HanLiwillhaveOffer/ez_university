@@ -46,8 +46,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Semester',
             fields=[
-                ('Semester_id', models.AutoField(primary_key=True, serialize=False)),
-                ('Semester_name', models.CharField(max_length=45, unique=True)),
+                ('semester_id', models.AutoField(primary_key=True, serialize=False)),
+                ('semester_name', models.CharField(max_length=45, unique=True)),
             ],
         ),
         migrations.CreateModel(
